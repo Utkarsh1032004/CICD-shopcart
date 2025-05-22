@@ -8,12 +8,12 @@ jobs:
     steps: 
     
         - name: "Setup node.js"
-          uses: action/setup-node@v4
+          uses: actions/setup-node@v4
           with:
             node-version: "21"
         
         - name: "Checkout code"
-          uses: action/checkout@v2
+          uses: actions/checkout@v2
 
         - name: "Install Dependencies"
           run: npm Install
