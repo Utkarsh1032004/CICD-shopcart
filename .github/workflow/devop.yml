@@ -5,8 +5,8 @@ on: workflow_dispatch
 jobs:
   Deploy:
     runs-on: self-hosted
-
     Steps: 
+    
         - name: "Setup node.js"
           uses: action/setup-node@v4
           with:
