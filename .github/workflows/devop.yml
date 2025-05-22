@@ -16,7 +16,7 @@ jobs:
           uses: actions/checkout@v2
 
         - name: "Install Dependencies"
-          run: npm Install
+          run: npm install
         
         - name: "install pw2 globally"
           run: npm install pm2 -g
