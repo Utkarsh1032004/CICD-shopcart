@@ -1,0 +1,29 @@
+name: "Deploy the project"
+
+on: workflow_dispatch
+
+jobs:
+  Deploy:
+    runs-on: self-hosted
+
+    Steps: 
+      - name: "Setup node.js"
+        uses: action/setup-node@v4
+        with:
+          node-version: "21"
+      
+      - name: "Checkout code"
+        uses: action/checkout@v2
+
+      - name: "Install Dependencies"
+        run: npm Install
+      
+      - name: "install pw2 globally"
+        run: npm install pm2 -g
+
+      - name: "Run tests"
+        run: npm test
+
+      - name: "Deploy to aws"
+        run: pm2 start src/index.js 
+        
